@@ -38,7 +38,7 @@
             autoplay: true,
             center: true,
             autoplayTimeout: 5000,
-            smartSpeed: 1000
+            smartSpeed: 1000,
         });
 
         testiSlides.owlCarousel({
@@ -51,7 +51,7 @@
             autoplayTimeout: 5000,
             smartSpeed: 700,
             animateIn: 'fadeIn',
-            animateOut: 'fadeOut'
+            animateOut: 'fadeOut',
         });
 
         portfolioSlides.owlCarousel({
@@ -59,12 +59,15 @@
             margin: 30,
             loop: true,
             nav: true,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            navText: [
+                '<i class="fa fa-angle-left"></i>',
+                '<i class="fa fa-angle-right"></i>',
+            ],
             dots: true,
             autoplay: false,
             autoplayTimeout: 5000,
             smartSpeed: 700,
-            center: true
+            center: true,
         });
     }
 
@@ -75,7 +78,7 @@
             $('.portfolio-filter').on('click', 'button', function () {
                 var filterValue = $(this).attr('data-filter');
                 $grid.isotope({
-                    filter: filterValue
+                    filter: filterValue,
                 });
             });
             // init Isotope
@@ -83,8 +86,8 @@
                 itemSelector: '.single_portfolio_item',
                 percentPosition: true,
                 masonry: {
-                    columnWidth: '.single_portfolio_item'
-                }
+                    columnWidth: '.single_portfolio_item',
+                },
             });
         });
     }
@@ -93,12 +96,12 @@
     if ($.fn.magnificPopup) {
         $('.portfolio-img, .product-img').magnificPopup({
             gallery: {
-                enabled: true
+                enabled: true,
             },
-            type: 'image'
+            type: 'image',
         });
         $('.video-icon').magnificPopup({
-            type: 'iframe'
+            type: 'iframe',
         });
     }
 
@@ -108,25 +111,25 @@
             tooltip: true,
             duration: 1000,
             barColor: '#70c745',
-            animateOnResize: true
+            animateOnResize: true,
         });
         $('#bar2').barfiller({
             tooltip: true,
             duration: 1000,
             barColor: '#70c745',
-            animateOnResize: true
+            animateOnResize: true,
         });
         $('#bar3').barfiller({
             tooltip: true,
             duration: 1000,
             barColor: '#70c745',
-            animateOnResize: true
+            animateOnResize: true,
         });
         $('#bar4').barfiller({
             tooltip: true,
             duration: 1000,
             barColor: '#70c745',
-            animateOnResize: true
+            animateOnResize: true,
         });
     }
 
@@ -134,7 +137,7 @@
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
             scrollSpeed: 1500,
-            scrollText: '<i class="fa fa-angle-up"></i>'
+            scrollText: '<i class="fa fa-angle-up"></i>',
         });
     }
 
@@ -142,20 +145,20 @@
     if ($.fn.counterUp) {
         $('.counter').counterUp({
             delay: 10,
-            time: 2000
+            time: 2000,
         });
     }
 
     // :: 10.0 Sticky Active Code
     if ($.fn.sticky) {
-        $(".alazea-main-menu").sticky({
-            topSpacing: 0
+        $('.alazea-main-menu').sticky({
+            topSpacing: 0,
         });
     }
 
     // :: 11.0 Tooltip Active Code
     if ($.fn.tooltip) {
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
     }
 
     // :: 12.0 Price Range Active Code
@@ -173,12 +176,19 @@
             max: max,
             values: [value_min, value_max],
             slide: function (event, ui) {
-                var result = label_result + " " + unit + ui.values[0] + ' - ' + unit + ui.values[1];
+                var result =
+                    label_result +
+                    ' ' +
+                    unit +
+                    ui.values[0] +
+                    ' - ' +
+                    unit +
+                    ui.values[1];
                 console.log(t);
                 t.closest('.slider-range').find('.range-price').html(result);
-            }
+            },
         });
-    })
+    });
 
     // :: 13.0 prevent default a click
     $('a[href="#"]').on('click', function ($) {
@@ -189,5 +199,4 @@
     if (browserWindow.width() > 767) {
         new WOW().init();
     }
-
 })(jQuery);
