@@ -2868,6 +2868,12 @@ img {
     }
 }
 
+@media (max-width: 774px) {
+    #achivement {
+        width: 100%;
+    }
+}
+
 /* :: 21.0 Leave A Reply Area CSS */
 .leave-comment-area {
     position: relative;
